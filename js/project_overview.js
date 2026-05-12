@@ -30,8 +30,9 @@ async function show_info() {
         const image_item = document.createElement("div");
         image_item.className = "slide fade";
         const show_image_url = window.location.href.split('?')[0] + "/../"+img_path;
+        //href="${show_image_url}"
         image_item.innerHTML = `
-        <a href="${show_image_url}">
+        <a>
             <img src="${img_path}" alt="${project.img_alt[img_index]}">
         </a>
         `;

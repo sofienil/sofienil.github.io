@@ -1,0 +1,16 @@
+:root {
+	--content-width: 50%;
+	--content-width-small-screen: 90%;
+	--content-width-medium-screen: 70%;
+
+	--transparent-dark: #00000045;
+	--transparent-darker-dark: #0000009b;
+	--main-dark: #1a1a1a;
+	--space-dark: #131313ff;
+	--mascot-color: #801f80;
+	--mascot-color-light: #ff58ff; 
+	
+	--shadow-color: #1a1a1a; 
+	--shadow: 	2px 0 var(--shadow-color), -2px 0 var(--shadow-color), 0 2px var(--shadow-color), 0 -2px var(--shadow-color),
+             	1px 1px var(--shadow-color), -1px -1px var(--shadow-color), 1px -1px var(--shadow-color), -1px 1px var(--shadow-color);
+}

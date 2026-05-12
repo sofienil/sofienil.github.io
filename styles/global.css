@@ -1,9 +1,4 @@
-:root {
-	--content-width: 50%;
-	--transparent-dark: #00000045;
-	--transparent-darker-dark: #0000009b;
-	--main-dark: #1a1a1a;
-}
+@import url('resources.css');
 
 * {
     margin: 0;
@@ -17,10 +12,11 @@
 body {
 	font-family: Arial, sans-serif;
 	letter-spacing: 1px;
-	background: var(--main-dark);
+	background: var(--space-dark);
+	
 }
 
-h1 {font-size: 3rem;}
+h1 {font-size: 2.5rem;}
 h2 {font-size: 2rem;}
 p {font-size: 1.5rem;}
 
@@ -58,27 +54,30 @@ li {list-style-type: none;}
 	align-items: center;
 
 	color: #fff;
-	position: sticky;
+	position: absolute;
 	top: 0;
 
-	background-color: #ffffff00;
-	height: 100px;
+	background-color: var(--space-dark);
+	height: max-content;
+	width: 100%;
 
-	z-index: 1000;
-	transition: height 0.5s ease-in-out, background-color 0.5s ease;
+	z-index: 1; 
+	transition: padding 0.5s ease-in-out, background-color 0.5s ease;
 }
 
 .navbar-padding { /* used in mobile resolution */
-	padding: 1rem 10rem; /* default */
+	padding: 2rem 10rem; /* default */
 }
 
 .navbar-shrinked {
-	background-color: #00000045 !important;
-	height: 60px !important;
+	background-color: var(--transparent-darker-dark) !important;
+	padding-top: 0.8rem !important;
+	padding-bottom: 0.8rem !important;
+	position: sticky !important; 
 }
 
 .logo {
-	border-left: 4px dashed #42ff81;
+	border-left: 4px dashed var(--mascot-color-light);
 	padding-left: 10px;
 	letter-spacing: 3px;
 }
@@ -101,8 +100,8 @@ li {list-style-type: none;}
 	transition: color 0.3s ease;
 }
 
-.nav-links a:hover { color: #42ff81 }
-.active-nav { color: #42ff81 !important}
+.nav-links a:hover { color: var(--mascot-color-light) }
+.active-nav { color: var(--mascot-color-light) !important}
 
 
 /* hamburger menu */
@@ -129,7 +128,6 @@ li {list-style-type: none;}
 
 	background-color: var(--transparent-darker-dark);
 	width: 100vw;
-	height: 100vh;
 	padding: 100px 20px;
 }
 
@@ -137,13 +135,18 @@ li {list-style-type: none;}
 /* footer */
 footer {
 	background-color: var(--transparent-dark);
-	height: 100px;
+	
+	padding: 30px 0;
 	margin-top: 100px;
   
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
+
+footer div {
+	width: var(--content-width);
 }
 
 
@@ -156,7 +159,7 @@ footer {
 
 .project-categories li {
 	color: #ffffff;
-	background-color: #008d2f;
+	background-color: var(--mascot-color);
 	border-radius: 25px;
 	padding: 3px 7px;
 }
@@ -167,11 +170,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-	:root {
+	/* :root {
 		--content-width: 90%;
 		--transparent-dark: #00000045;
 		--main-dark: #1a1a1a;
-	}
+	} */
 
 	h1 {font-size: 2rem;}
 
@@ -191,4 +194,14 @@ footer {
 	.hamburger-menu {
 		display: flex;
 	}
+
+	#about-me {
+		width: var(--content-width-small-screen) !important;
+	}
+
+	#projects {
+		width: var(--content-width-small-screen) !important;
+	}
+
+	.justify-text { text-align: center; }
 }

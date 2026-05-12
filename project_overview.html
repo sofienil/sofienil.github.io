@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sofie Nilsson</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sofie Nilsson</title>
 
-    <link href="imgs/app.svg" rel="icon"> <!-- favicon -->
+	<link href="imgs/app.svg" rel="icon"> <!-- favicon -->
 
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/project_overview.css">
-    <script src="js/global.js"></script>
+	<link rel="stylesheet" href="styles/global.css">
+	<link rel="stylesheet" href="styles/project_overview.css">
+	<script src="js/global.js"></script>
+	<script src="js/img_detail.js"></script>
   </head>
   <body>
-    <header id="navbar" class="navbar-padding">
-        <div class="logo">
-          <a href="index.html">Sofie Nilsson</a>
-        </div>
-    </header>
+	<div id="image-modal" class="hide">
+	  <div class="modal-container">
+		<button class="close-btn">&times;</button>
+		<img id="modal-image" src="" alt="">
+	  </div>
+	</div>
 
-    <div id="project-overview">
-      <div class="slideshow-container">
-        <div class="arrows prev" onclick="change_slide(-1)">&#10094;</div>
-    
-        <div id="image-container"></div>
+	<header id="navbar" class="navbar-padding">
+		<div class="logo">
+		  <a href="index.html">Sofie Nilsson</a>
+		</div>
+	</header>
 
-        <div class="arrows next" onclick="change_slide(1)">&#10095;</div>      
-      </div>
-    
-      <div id="dots-container"></div>
+	<div id="project-overview">
+	  <div class="slideshow-container">
+		<div class="arrows prev" onclick="change_slide(-1)">&#10094;</div>
 
-      <div id="project-overview-text"></div>
-    </div>
-    
-    <footer>
-      <div class="centered-text">
-        Designed and coded by me in visual studio code.<br>
-        © Copyright <strong>Sofie Nilsson</strong>. All rights reserved.
-      </div>
-    </footer>
+		<div id="image-container"></div>
 
-    <script src="js/project_overview.js"></script>
+		<div class="arrows next" onclick="change_slide(1)">&#10095;</div>
+	  </div>
+
+	  <div id="dots-container"></div>
+
+	  <div id="project-overview-text"></div>
+	</div>
+
+	<footer>
+	  <div class="centered-text">
+		Designed and coded by me in visual studio code.<br><br>
+		© Copyright <strong>Sofie Nilsson</strong>. All rights reserved.
+	  </div>
+	</footer>
+
+	<script src="js/project_overview.js"></script>
   </body>
 </html>

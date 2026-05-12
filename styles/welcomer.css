@@ -1,0 +1,108 @@
+@import url('resources.css');
+
+/* Intro anim */
+.overlay {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	z-index: 2;
+}
+
+.left-half, .right-half {
+	width: 50vw;
+	height: 100vh;
+	transition: all 1s ease;
+	background-color: #3a3a3a; 
+	animation-duration: 1s; 
+	opacity: 0;
+}
+
+.left-half { animation-name: sliding-left;}
+.right-half { animation-name: sliding-right;}
+
+@keyframes sliding-left {
+  0%   {translate: 0%; opacity: 1;}
+  100% {translate: -100%;}
+}
+
+@keyframes sliding-right {
+  0%   {translate: 0%; opacity: 1;}
+  100% {translate: 100%;}
+}
+
+#intro {
+	flex-direction: column;
+	color: #fff;
+	z-index: 2;
+
+	height: 100vh;
+	width: 100vw;
+
+	overflow: hidden;
+
+	animation-name: intro-appear;
+	animation-duration: 1s; 
+
+	background-image: url("../imgs/welcomer/purple.jpg");
+	background-size: cover;
+
+	transform: perspective(3000px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg)) scale(1.1); /*parallax*/
+	translate: var(--pos-x, 0px) var(--pos-y, 0px); /*parallax*/
+
+	transition: transform 0.1s ease-out;
+	overflow-x: hidden; 
+}
+
+.parallax-wrapper {
+	overflow: hidden;
+  	height: 100vh;
+	margin-bottom: 100px;
+}
+
+@keyframes intro-appear {
+  0%   {opacity: 0;}
+  50%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+
+
+.welcomer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-shadow: var(--shadow);
+  	animation: welcomer-appear 1s ease forwards;
+}
+
+@keyframes welcomer-appear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+#intro h1 {
+	border-bottom: 10px;
+	padding-bottom: 10px;
+	letter-spacing: 3px;
+}
+
+.parallax-container {
+  /* use CSS variables calculated in JavaScript */
+  transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+  transform-style: preserve-3d;
+  transition: transform 1.5s cubic-bezier(0.05, 0.5, 0, 1);
+  will-change: transform;
+}
+

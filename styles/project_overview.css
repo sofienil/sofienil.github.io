@@ -1,78 +1,132 @@
+@import url('resources.css'); 
+
+#image-modal {
+	width: 100%;
+	height: 100vh;
+
+	position: fixed;
+	background: var(--space-dark);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	z-index: 4;
+}
+
+.close-btn {
+	font-size: 5rem;
+	background: #00000000;
+	border: none;
+	text-shadow: var(--shadow);
+	position: fixed;
+    right: 0;
+	padding: 20px 50px;
+	z-index: 2;
+}
+
+.modal-container {
+	display: flex;
+	flex-direction: column;
+}
+
+#modal-image {
+	position: fixed;
+  	inset: 0;
+	padding: 50px;
+	width: 100%;
+  	height: 100%;
+	object-fit: contain;
+}
+
 #project-overview {
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    margin: auto;
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	height: 100vh;
+	margin: auto;
+	padding: 100px 0;
+	margin-bottom: 100px;
 }
 
 #project-overview-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 20px;
 }
 
 .slideshow-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-    width: 30vw;
-    margin: 0 auto;
-  }
+	min-width: 100%;
+	margin: 0 auto;
+}
   
-  .slide {
-    display: none;
-    height: 30vh;
-  }
+.slide {
+	display: none;
+	height: 30vh;
+}
   
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  
-  .show { display: block; }  /* shows images in slideshow */
+.slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
 
-  /* fade needs to happen only for the shown item, otherwise when we hide the previous it will be slightly visible before disappearing */
-  .fade { animation: fadeEffect 1.5s; } 
-  
-  @keyframes fadeEffect {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  #dots-container {
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #717171;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.2s ease-in;
-  }
-  
-  .dot.active { background-color: #ffffff; }
+.show { display: block; }  /* shows images in slideshow */
 
-  .arrows { padding: 10px; }
-  .arrows:hover { background-color: #46464670;}
+/* fade needs to happen only for the shown item, otherwise when we hide the previous it will be slightly visible before disappearing */
+.fade { animation: fadeEffect 1.5s; } 
+
+@keyframes fadeEffect {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+#dots-container {
+	text-align: center;
+	padding: 10px;
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 5px;
+	background-color: #717171;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.2s ease-in;
+}
+
+.dot.active { background-color: #ffffff; }
+
+.arrows { padding: 10px; }
+.arrows:hover { background-color: #46464670;}
 
 
-  .links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+.links {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
 
-  .links a:hover { color: #42ff81; }
+.links a:hover { color: var(--mascot-color-light); }
 
+@media (max-width: 1024px) {
+	#project-overview {
+		width: var(--content-width-medium-screen) !important;
+	}
+}
+
+@media (max-width: 768px) {
+	#project-overview {
+		width: var(--content-width-small-screen) !important;
+	}
+}

@@ -1,8 +1,10 @@
 function intro_overflow_anim(duration) { 
   document.body.style.overflow = "hidden";
-  
+  const overlay = document.getElementsByClassName('overlay')[0];
+
   setTimeout(() => {
     document.body.style.overflow = "auto";  
+    overlay.style.zIndex = '0';
   }, duration);
 }
 
