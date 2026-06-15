@@ -34,6 +34,12 @@
   100% {translate: 100%;}
 }
 
+.parallax-wrapper {
+	overflow: hidden;
+  	height: 100vh;
+	margin-bottom: 100px;
+}
+
 #intro {
 	flex-direction: column;
 	color: #fff;
@@ -53,15 +59,10 @@
 	transform: perspective(3000px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg)) scale(1.1); /*parallax*/
 	translate: var(--pos-x, 0px) var(--pos-y, 0px); /*parallax*/
 
-	transition: transform 0.1s ease-out;
 	overflow-x: hidden; 
 }
 
-.parallax-wrapper {
-	overflow: hidden;
-  	height: 100vh;
-	margin-bottom: 100px;
-}
+
 
 @keyframes intro-appear {
   0%   {opacity: 0;}
@@ -78,6 +79,7 @@
 	transform: translate(-50%, -50%);
 	text-shadow: var(--shadow);
   	animation: welcomer-appear 1s ease forwards;
+	z-index: 1;
 }
 
 @keyframes welcomer-appear {

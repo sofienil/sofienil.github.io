@@ -7,7 +7,7 @@
     text-decoration: none; 
     color: #fff;
     scroll-behavior: smooth;
-  }
+}
   
 body {
 	font-family: Arial, sans-serif;
@@ -73,7 +73,7 @@ li {list-style-type: none;}
 	background-color: var(--transparent-darker-dark) !important;
 	padding-top: 0.8rem !important;
 	padding-bottom: 0.8rem !important;
-	position: sticky !important; 
+	position: fixed !important; /* sticky will cause a jumpy front page when navbar resizes */
 }
 
 .logo {

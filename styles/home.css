@@ -55,6 +55,13 @@
 	padding: 10px; 
 }
 
+
+@media (max-width: 768px) {
+	#contacts {
+		width: var(--content-width-small-screen) !important;
+	}
+}
+
 /* projects */
 #projects {
 	padding-top: 200px;
@@ -108,7 +115,11 @@
 	gap: 2rem;
 }
 
-.project-date { width: 4rem;}
+.project-date { 
+	width: 120px;
+	text-align: center;
+
+}
 
 .project-showcase {
 	display: flex;
@@ -139,5 +150,15 @@
 	transition: translate 0.2s ease-in;
 }
 
+/* disable hover effects on mobile and tablet */
+@media (max-width: 1024px) { 
+	#project-list:hover .project-item {
+		opacity: 1;
+		transition: none;
+	}
 
-
+	#project-list:hover .project-item:hover {
+		opacity: 1;
+		transition: none;
+	}
+}
