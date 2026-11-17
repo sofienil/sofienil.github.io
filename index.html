@@ -5,108 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sofie Nilsson</title>
 
-    <link href="imgs/app.svg" rel="icon"> <!-- favicon -->
+    <link href="components/global/icons/app.svg" rel="icon"> <!-- favicon -->
 
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="styles/welcomer.css">
-    
-    <script src="js/global.js"></script> 
-    <script src="js/home.js"></script>
-    <script src="js/parallax.js"></script>
+    <link rel="stylesheet" href="components/global/global.css">
+    <link rel="stylesheet" href="components/global/footer.css">
+    <link rel="stylesheet" href="components/animations/pop_up_anim.css">
+    <link rel="stylesheet" href="components/navbar/navbar.css">
+    <script src="components/navbar/navbar.js"></script> 
+    <link rel="stylesheet" href="components/animations/home_start_split_anim.css">
+    <link rel="stylesheet" href="components/home_about/home_content.css">
+    <link rel="stylesheet" href="components/home_projects/home_project_list.css">
+    <link rel="stylesheet" href="components/home_projects/home_project_popup_view.css">
+
+    <link rel="stylesheet" href="components/animations/cursor_anim.css">
+    <script src="components/animations/cursor_anim.js"></script> 
   </head>
   <body>
-    <header id="navbar" class="navbar-padding">
-        <div class="logo">
-          <a href="#">Sofie Nilsson</a>
-        </div>
-        <nav class="nav-links">
-          <a id="nav-about" href="#about">About</a>
-          <a id="nav-projects" href="#projects">Projects</a>
-        </nav>
-        <div id="navbar-hamburger" class="hamburger-menu" onclick="toggle_hamburger('mobile-menu', 'navbar-hamburger')">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>   
-    </header>
-
-    <aside class="sticky-top">
-      
-      <div id="mobile-menu" class="hide">
-        <div id="aside-hamburger" class="hamburger-menu" onclick="toggle_hamburger('navbar-hamburger', 'mobile-menu')">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div> 
-        <a id="mobile-nav-home" class="active-nav" href="#">Home</a>
-        <a id="mobile-nav-about" href="#about">About</a>
-        <a id="mobile-nav-projects" href="#projects">Projects</a>
-      </div>
-    </aside>
-    
-
-    <!-- Overlay for split animation -->
-    <div class="overlay">
+    <!-- start split animation -->
+    <div class="split-anim">
       <div class="left-half"></div>
       <div class="right-half"></div>
     </div>
 
-    <!-- Main content -->
-     <div class="content-center welcomer">
-        <h1>Welcome to My Portfolio</h1>
+    <!-- popup project view -->
+    <div id="project-popup-wrapper" class="hide">
+      <div id="project-popup">
+        <div class="slideshow-container">
+        <div id="slide-prev" class="arrows prev">&#10094;</div>
+
+        <div id="image-container"></div>
+
+        <div id="slide-next" class="arrows next">&#10095;</div>
+        </div>
+
+        <div id="slideshow-dots-container"></div>
+
+        <div id="project-popup-content"></div>
+      </div>
     </div>
 
-     <div class="parallax-wrapper">
-      <div id="intro">
-      </div>
-     </div>
-   
+    <!-- home content -->
+    <div class="content-wrapper">
+      <!-- navbar -->
+      <header class="sidebar-wrapper">
+        <div>
+          <a href="#about" class="home-name">Sofie Nilsson</a>
+          <p>Computer Science Engineer</p>
+        </div>
+        <div id="contacts">
+          <a href="https://www.linkedin.com/in/sofie-nilsson-b30551196/" class="contact-item">
+            <img class="contact-img" src = "components/global/icons/linkedin.png" alt="LinkedIn icon"/>
+            <p>LinkedIn</p>
+          </a>
+        </div>
 
-    <div id="about">
-      <div id="about-me">
-        <h2 class="centered-text">About me</h2>
-        <div class="about-container">
-          <p class="justify-text">
-            I'm a Computer science student with a master in machine learning. I have experience in C++, C#, Python and Kotlin. Towards web-development I'm knowledgeable in HTML, PHP, CSS, JavaScript and SQL. <br><br>
-            
-            I'm also interested in art and design. I've created logos and artwork by using Adobe XD, Penpot and Krita. Other softwares I have experience in are Blender, Adobe After Effects and a bit of Photoshop.
+        <nav class="nav-links nav-progress">
+          <div class="nav-progress-line-container">
+            <span class="nav-progress-line"></span>
+            <span class="nav-progress-active-line"></span>
+          </div>
+          <div class="nav-progress-dot-container">
+            <span class="nav-progress-dot"></span>
+            <a id="nav-about" href="#about">About</a>
+          </div>
+          <div class="nav-progress-dot-container">
+            <span class="nav-progress-dot"></span>
+            <a id="nav-about" href="#experience">Experience</a>
+          </div>
+          <div class="nav-progress-dot-container">
+            <span class="nav-progress-dot"></span>
+            <a id="nav-projects" href="#projects">Projects</a>
+          </div>
+        </nav>
+      </header>
+      <!-- ^ navbar ^ -->
+
+
+      <!-- home about me -->
+      <div id="home-about-wrapper" class="sidebar-wrapper">
+        <div id="about" class="pop-up-group">
+          <h2></h2>
+          <p class="pop-up-anim">
+            Hello, I'm Sofie! I hold a Master's degree in Machine Learning and a major in Computer Science. <br><br>
+            I love creating, whether it's in programming or design. I have most experience in C++ and Python. However, I have also worked with C# (in unity) and Kotlin (in Android Studio). I enjoy doing web project and I'm knowledgeable in HTML, PHP, CSS, JavaScript, React.js and SQL. <br><br>
+            I've created logos and artwork on my free time by using Adobe XD, Penpot and Krita. Other softwares I have experience in are Blender, Adobe After Effects and a bit of Photoshop.
           </p>
         </div>
+
+        <div id="experience" class="pop-up-group">
+          <h2 class="pop-up-anim">Experience</h2>
+
+          <div class="experience-item pop-up-anim">
+            <h3>Degree project at Systecon, 2025 HT</h3>
+            <p>Master's thesis about reducing computational cost in optimization of Fly-Away Kits and making evaluations faster by implementing approximation models for the simulation SIMLOX.</p>
+          </div>
+         
+          <div class="experience-item pop-up-anim">
+            <h3>APL (internship) at Gomspace, 2020</h3>
+            <p>Gomspace is a company that delivers complete satellite solutions to commercial customers worldwide.</p>
+          </div>    
+        </div>
+
+        <div id="projects">
+          <div class="pop-up-group">
+            <h2 id="project-header" class="centered-text pop-up-anim">Projects</h2>
+
+            <div id="portfolio-filters" class="centered-text pop-up-anim">
+              <li class="filter-item filter-active" data-filter="all">All</li>
+              <li class="filter-item" data-filter="app">App</li>
+              <li class="filter-item" data-filter="web">Web</li>
+              <li class="filter-item" data-filter="design">Design</li>
+            </div>
+          </div>
+          
+
+          <div id="project-list" class="pop-up-group">
+            <!-- <script type="module" src="components/home_projects/home_project_list.js"></script>      -->
+          </div>
+        </div>
       </div>
-    
-      <div id="contacts" class="contacts-flex-direction">
-        <a>
-          <img src = "imgs/mail.svg" alt="Mail icon"/>
-          <p>sofien.j1020@gmail.com</p>
-        </a>
-        <a href="https://www.linkedin.com/in/sofie-nilsson-b30551196/">
-          <img src = "imgs/linkedin.png" alt="LinkedIn icon"/>
-          <p>LinkedIn</p>
-        </a>
-      </div>
+      
+      <!-- ^ home about me ^ -->
     </div>
 
-    <div id="projects">
-      <h2 id="project-header" class="centered-text">Projects</h2>
+    <script type="module">
+      import { pop_up_animation } from './components/animations/pop_up_anim.js';
+      import { get_project_list } from './components/home_projects/home_project_list.js';
 
-      <div class="centered-text" id="portfolio-filters">
-        <li class="filter-item filter-active" data-filter="all">All</li>
-        <li class="filter-item" data-filter="app">App</li>
-        <li class="filter-item" data-filter="web">Web</li>
-        <li class="filter-item" data-filter="design">Design</li>
-      </div>
+      await get_project_list(); 
+      pop_up_animation();
+    </script>
 
-      <div id="project-list">
-        <script src="js/projects.js"></script>     
-      </div>
-    </div>
     
     <footer>
       <div class="centered-text">
       Designed and coded by me in visual studio code.<br><br>
       © Copyright <strong>Sofie Nilsson</strong>. All rights reserved.
-    </div>
-    </footer>
+      </div>
+    </footer> 
   </body>
 </html>

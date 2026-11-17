@@ -1,0 +1,35 @@
+@import url('../global/resources.css');
+
+.split-anim {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.left-half, .right-half {
+	width: 50vw;
+	height: 100vh;
+	transition: all 1s ease;
+	background-color: #3a3a3a; 
+	animation-duration: 1s; 
+	opacity: 0;
+}
+
+.left-half { animation-name: sliding-left;}
+.right-half { animation-name: sliding-right;}
+
+@keyframes sliding-left {
+  0%   {translate: 0%; opacity: 1;}
+  100% {translate: -100%;}
+}
+
+@keyframes sliding-right {
+  0%   {translate: 0%; opacity: 1;}
+  100% {translate: 100%;}
+}

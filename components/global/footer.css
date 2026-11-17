@@ -1,0 +1,9 @@
+footer {
+	background-color: var(--transparent-dark);
+	padding: 30px 0;
+    text-align: center;
+
+	
+    position: relative;
+	top: 100px;
+}

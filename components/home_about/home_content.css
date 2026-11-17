@@ -1,0 +1,48 @@
+@import url('../global/resources.css');
+@import url('../global/responsiveness.css');
+
+.content-wrapper {
+    padding-top: 150px;
+    width: var(--content-width);
+    margin: auto;
+    display: flex;
+	flex-direction: var(--content-wrapper-flex-direction);
+}
+
+.sidebar-wrapper {
+    width: var(--content-wrapper-width); 
+	height: fit-content;
+	position: var(--sidebar-wrapper-position);
+	top: 150px; 
+	display: flex;
+    flex-direction: column;
+	gap: 30px;
+}
+
+#home-about-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 150px;
+}
+
+#experience {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.experience-item {
+	display: flex;
+	flex-direction: var(--experience-item-flex-direction);
+	gap: var(--experience-item-gap);
+	align-items: baseline;
+	padding-bottom: 20px;
+}
+
+.experience-item h3 {
+	width: 300px;
+}
+
+.experience-item p {
+	width: 100%;
+}

@@ -82,7 +82,7 @@
 			"index": 4 ,
 			"filter": "design",
 			"date": "july - aug 2020",
-			"title": "Twitch banners and icons",
+			"title": "Banner and icon designs",
 			"preview_text": "",
 			"description": "",
 			"tags": ["Adobe XD"],
@@ -101,7 +101,7 @@
 			"tags": ["Unreal Engine"],
 			"img_path": ["project_material/project3/p3_1.png"],
 			"img_alt": ["screenshot of project, can also be seen in the video"],
-			"links": ["project_material/project3/p3_1.mp4"],
+			"links": ["components/global/project_material/project3/p3_1.mp4"],
 			"link_text": ["Link to Video of project"]
 		},
 		{

@@ -1,0 +1,104 @@
+@import url('../global/resources.css');
+
+
+#projects {
+	padding-bottom: 200px;
+}
+
+#project-list {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+.project-title-container {
+	display: flex;
+}
+
+.project-title {
+	font-size: 1.5rem;
+}
+
+.project-item {
+	display: flex;  
+	align-items: center;
+	gap: 2rem;
+
+	padding-bottom: 20px;
+    border-bottom: 2px solid var(--grey);
+}
+
+.project-date { 
+	width: 150px;
+	text-align: center;
+}
+
+.project-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-categories li {
+    color: #ffffff;
+    background-color: var(--mascot-color);
+    border-radius: 25px;
+    padding: 3px 7px;
+}
+
+/* project filter */
+.filter-item {
+	cursor: pointer;
+	margin: 15px 15px 15px 0;
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 12px;
+	line-height: 20px;
+	color: var(--mascot-color-light);
+	border-radius: 4px;
+	text-transform: uppercase;
+
+	margin-bottom: 5px;
+	transition: all 0.3s ease-in-out;
+}
+
+.filter-item:not(.filter-active):hover {
+	background-color: #312831;
+}
+
+.filter-active {
+	background-color: var(--mascot-color);
+	font-weight: bold;
+	color: #ffffff !important;
+}
+
+.project-showcase {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.link-icon { 
+	height: 30px;
+	vertical-align: middle;
+}
+
+/* project list hovering */
+#project-list:hover .project-item {
+	opacity: 0.5 !important;
+	transition: opacity 0.1s linear !important;
+}
+
+#project-list:hover .project-item:hover {
+	opacity: 1 !important; 
+	transition: opacity 0.1s ease-in;
+} 
+
+#project-list:hover .project-item:hover .link-icon {
+	transform: translate(50%, -10%) !important;
+	transition: translate 0.1s ease-in !important;
+}

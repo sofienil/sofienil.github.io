@@ -1,0 +1,97 @@
+@import url('../global/resources.css');
+@import url('../global/responsiveness.css');
+
+
+.home-name {
+	text-decoration: none;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #fff;
+}
+
+/* contacts */
+#contacts {
+	display: flex;
+}
+
+.contact-item {
+	display: flex;
+    align-items: center;
+}
+
+.contact-img {
+	width: 40px;
+	padding-right: 10px; 
+}
+
+/* navbar */
+.nav-links {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: #fff;
+	padding: 10px 40px 10px 0px;
+}
+
+.nav-links a:hover { color: var(--mascot-color-light) }
+.active-nav { 
+	color: var(--mascot-color-light) !important;
+	transform: translateX(15px);
+    transition: transform 0.5s ease-out;
+}
+
+/* navbar progress */
+.nav-progress {
+	position: relative;
+	opacity: var(--nav-progress-opacity);
+}
+
+.nav-progress-line-container {
+	position: absolute;
+	width: var(--progress-navbar-dot-size);
+	height: calc(100% - var(--progress-navbar-item-h));
+	top: calc(var(--progress-navbar-item-h) / 2);
+}
+
+.nav-progress-line {
+	display: block;
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	left: calc(var(--progress-navbar-dot-size)/2 - calc(var(--progress-navbar-line-width)/2));
+	background: var(--progress-navbar-line-color);
+}
+
+.nav-progress-active-line {
+	display: block;
+	position: absolute;
+	width: 2px;
+	height: calc(var(--progress-navbar-p) * 100%);
+	left: calc(var(--progress-navbar-dot-size)/2 - calc(var(--progress-navbar-line-width)/2));
+	background: var(--progress-navbar-active-dot-color);
+}
+
+.nav-progress-dot-container {
+	display: flex;
+	align-items: center;
+}
+
+.nav-progress-dot {
+	flex: none;
+	margin-right: 15px;
+	width: var(--progress-navbar-dot-size);
+	height: var(--progress-navbar-dot-size);
+	border-radius: 50%;
+	border: 2px solid var(--progress-navbar-line-color);
+	background: var(--progress-navbar-dot-color);
+	z-index: 1;
+}
+
+.dot-reached {
+	background: var(--progress-navbar-active-dot-color);
+	border-color: var(--progress-navbar-active-dot-color);
+}

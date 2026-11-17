@@ -1,5 +1,5 @@
 :root {
-	--content-width: 50%;
+	--content-width: 60%;
 	--content-width-small-screen: 90%;
 	--content-width-medium-screen: 70%;
 
@@ -7,10 +7,22 @@
 	--transparent-darker-dark: #0000009b;
 	--main-dark: #1a1a1a;
 	--space-dark: #131313ff;
+	--grey: #404040;
+	--light-grey: #636363;
 	--mascot-color: #801f80;
 	--mascot-color-light: #ff58ff; 
 	
 	--shadow-color: #1a1a1a; 
 	--shadow: 	2px 0 var(--shadow-color), -2px 0 var(--shadow-color), 0 2px var(--shadow-color), 0 -2px var(--shadow-color),
              	1px 1px var(--shadow-color), -1px -1px var(--shadow-color), 1px -1px var(--shadow-color), -1px 1px var(--shadow-color);
+
+	/* progress navbar */
+	--progress-navbar-p: 0; 
+	--progress-navbar-item-h: 24px;
+	--progress-navbar-universal-color: var(--main-dark);
+    --progress-navbar-line-color: var(--progress-navbar-universal-color);
+    --progress-navbar-dot-color: var(--progress-navbar-universal-color);
+	--progress-navbar-dot-size: 20px;
+	--progress-navbar-line-width: 2px;
+	--progress-navbar-active-dot-color: var(--mascot-color);
 }
